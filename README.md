@@ -6,6 +6,10 @@ multiS is a local workspace with up to eight independent Chromium sessions. Open
 
 Use it to compare customer and admin views, test permissions, try a multi-user workflow, or inspect phone, tablet, and desktop layouts together.
 
+![multiS workspace running three isolated browser sessions at phone, desktop, and tablet sizes](docs/images/multis-workspace.png)
+
+*The included Orbit demo running in three live, independent Chromium sessions.*
+
 ## Quick start
 
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) or Docker Engine with the Compose plugin, then run:
