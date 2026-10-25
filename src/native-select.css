@@ -1,0 +1,227 @@
+.browser-shell {
+  position: relative;
+}
+.native-select-backdrop {
+  position: absolute;
+  inset: 36px 0 0;
+  z-index: 5;
+  background: #060b08ad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: default;
+}
+.native-select-sheet {
+  width: 100%;
+  max-width: 420px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #202a21;
+  border: 1px solid #5d7350;
+  border-radius: 8px;
+  box-shadow: 0 12px 45px #0009;
+  overflow: hidden;
+  color: #e0ebd8;
+  font-size: 12px;
+  user-select: none;
+}
+.native-select-sheet > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #3c4e33;
+  flex-shrink: 0;
+}
+.native-select-sheet > header > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: 500;
+}
+.native-select-sheet > header > button {
+  display: grid;
+  place-items: center;
+  color: #a0b28f;
+  padding: 3px;
+  border-radius: 4px;
+}
+.native-select-sheet > header > button:hover {
+  background: #3b4b31;
+  color: white;
+}
+.native-select-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #131d12;
+  border: 1px solid #425739;
+  border-radius: 4px;
+  margin: 8px 10px 5px;
+  padding: 0 8px;
+  color: #829974;
+  flex-shrink: 0;
+}
+.native-select-search input {
+  border: 0;
+  outline: 0;
+  background: none;
+  color: #d7e8ca;
+  padding: 9px 0;
+  min-width: 0;
+  width: 100%;
+  font-size: 11px;
+}
+.native-select-options {
+  padding: 5px;
+  min-height: 0;
+  overflow: auto;
+  outline: none;
+  scrollbar-width: thin;
+  scrollbar-color: #5a704e #202a21;
+  overscroll-behavior: contain;
+}
+.native-select-options > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 9px;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 4px;
+  color: #c4d6b7;
+}
+.native-select-options > button > span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.native-select-options > button:hover:not(:disabled),
+.native-select-options > button.active:not(:disabled) {
+  background: #405632;
+  color: #ecf9e2;
+}
+.native-select-options > button[aria-selected="true"] {
+  color: #c5f48d;
+}
+.native-select-options > button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.native-select-options > button:focus-visible {
+  outline: 1px solid #baf279;
+  outline-offset: -1px;
+}
+.native-select-group {
+  font-size: 9px;
+  letter-spacing: 0.7px;
+  color: #94ab83;
+  padding: 9px 9px 4px;
+}
+.native-select-empty {
+  text-align: center;
+  color: #8da77b;
+  font-size: 11px;
+  padding: 12px 8px;
+}
+.native-select-truncated {
+  font-size: 9px;
+  line-height: 1.5;
+  padding: 6px 12px;
+  color: #8fa47f;
+  flex-shrink: 0;
+}
+.is-fullscreen .native-select-backdrop {
+  padding: 20px;
+}
+.is-fullscreen .native-select-sheet {
+  max-height: min(560px, 100%);
+}
+.temporal-picker {
+  padding: 12px;
+  overflow: auto;
+  min-height: 0;
+  color-scheme: dark;
+}
+.temporal-value {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.temporal-value input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #131d12;
+  border: 1px solid #5d7350;
+  border-radius: 4px;
+  color: #e0ebd8;
+  padding: 9px;
+  font: inherit;
+}
+.temporal-month,
+.temporal-picker footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.temporal-month {
+  margin-bottom: 8px;
+}
+.temporal-month button {
+  padding: 6px;
+  display: grid;
+  place-items: center;
+}
+.temporal-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+  margin-bottom: 12px;
+}
+.temporal-days span {
+  text-align: center;
+  color: #94ab83;
+  padding: 5px 0;
+}
+.temporal-days button {
+  padding: 8px 0;
+  border-radius: 4px;
+}
+.temporal-days button:hover:not(:disabled),
+.temporal-days button[aria-pressed="true"] {
+  background: #405632;
+  color: #c5f48d;
+}
+.temporal-picker button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.temporal-picker button:focus-visible {
+  outline: 1px solid #baf279;
+}
+.temporal-picker footer {
+  margin-top: 12px;
+}
+.temporal-picker footer button {
+  padding: 8px 14px;
+  border: 1px solid #5d7350;
+  border-radius: 4px;
+}
+.temporal-picker footer button[type="submit"] {
+  background: #405632;
+  color: #ecf9e2;
+}
+.temporal-hint {
+  display: block;
+  color: #94ab83;
+  line-height: 1.5;
+}

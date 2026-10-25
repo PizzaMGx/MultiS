@@ -1,0 +1,30 @@
+services:
+  playground:
+    build: .
+    environment:
+      BROWSER_LOCALHOST_HOST: host.docker.internal
+    ports:
+      - "127.0.0.1:${PORT:-3000}:3000"
+    volumes:
+      - playground-data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    shm_size: "1gb"
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+
+volumes:
+  playground-data:
